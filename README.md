@@ -13,6 +13,23 @@ Older versions of Voyager built in AngularJS at the following URL.
 - The __Voyager 2__ visualization tool, which blends manual and automated chart specification – demo at http://vega.github.io/voyager2 and source code at https://github.com/vega/voyager2
 - The __Voyager 1__ visualization browser -- demo at http://uwdata.github.io/voyager and source code in the `vy1` branch of this repository.
 
+## User Documentation
+
+You can find Voyager user documentation [on our GitBook website](https://data-voyager.gitbook.io/voyager/)
+
+This documentation is divided into several sections:
+
+* [Load Data](https://data-voyager.gitbook.io/voyager/load-data)
+* [Visualizing Data](https://data-voyager.gitbook.io/voyager/visualizing-data)
+  * [Univariate Summaries](https://data-voyager.gitbook.io/voyager/visualizing-data/univariate-summaries)
+  * [Specify Visual Encodings](https://data-voyager.gitbook.io/voyager/visualizing-data/specify-visual-encodings)
+  * [Filter](https://data-voyager.gitbook.io/voyager/visualizing-data/filter)
+  * [Related Views](https://data-voyager.gitbook.io/voyager/visualizing-data/related-views)
+  * [Wildcards](https://data-voyager.gitbook.io/voyager/visualizing-data/wildcards)
+  * [Customizing Visualizations](https://data-voyager.gitbook.io/voyager/visualizing-data/customizing-visualizations)
+* [Bookmark Gallery](https://data-voyager.gitbook.io/voyager/bookmark-gallery)
+* [Using Voyager in JupyterLab](https://data-voyager.gitbook.io/voyager/using-voyager-in-juypterlab)
+
 ## Basic Setup
 
 For basic setup for local development or installation, we use [yarn](https://yarnpkg.com/en/) for package management. Installing dependencies can be done with:
