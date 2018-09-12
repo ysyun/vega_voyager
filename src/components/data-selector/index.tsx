@@ -43,7 +43,7 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
   constructor(props: DataSelectorProps) {
     super(props);
 
-    this.state = {modalIsOpen: false, dataText: '', dataName: '', dataUrl: '', fileType: undefined};
+    this.state = {modalIsOpen: false, dataText: '', dataName: 'Step & Point', dataUrl: 'https://gist.githubusercontent.com/ysyun/40a98cae02689ef175556fb7e6273909/raw/97623ec10d4488fa503aad6b296ea56be73cbf90/step_point.json', fileType: undefined };
 
     this.onDatasetChange = this.onDatasetChange.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -59,29 +59,24 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
   public render() {
     const {title} = this.props;
 
-    return (
-      <span styleName='data-selector'>
+    return <span styleName="data-selector">
         <button onClick={this.openModal}>{title}</button>
-        <Modal
-         isOpen={this.state.modalIsOpen}
-         onRequestClose={this.closeModal}
-         contentLabel="Data Selector"
-         styleName="modal"
-         className="voyager"
-       >
-          <div className='modal-header'>
-            <a styleName='modal-close' onClick={this.closeModal}>close</a>
+        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Data Selector" styleName="modal" className="voyager">
+          <div className="modal-header">
+            <a styleName="modal-close" onClick={this.closeModal}>
+              close
+            </a>
             <h3>Add Dataset</h3>
           </div>
           <Tabs className={styles['react-tabs']}>
             <TabList className={styles['tab-list']}>
+              <Tab className={styles.tab}>From Remote URL</Tab>
+              <Tab className={styles.tab}>Paste or Upload Dataset</Tab>
               <Tab className={styles.tab}>Change Dataset</Tab>
-              <Tab className={styles.tab}>Paste or Upload Data</Tab>
-              <Tab className={styles.tab}>From URL</Tab>
             </TabList>
 
             <TabPanel className={styles['tab-panel']}>
-              {this.renderDatasetPanel()}
+              {this.renderUrlPanel()}
             </TabPanel>
             <TabPanel className={styles['tab-panel']}>
               <div>
@@ -90,12 +85,11 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
               </div>
             </TabPanel>
             <TabPanel className={styles['tab-panel']}>
-              {this.renderUrlPanel()}
+              {this.renderDatasetPanel()}
             </TabPanel>
           </Tabs>
-       </Modal>
-      </span>
-    );
+        </Modal>
+      </span>;
   }
 
   private renderDataset(dataset: NamedData) {
