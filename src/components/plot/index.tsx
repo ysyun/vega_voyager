@@ -91,6 +91,12 @@ export class PlotBase extends React.PureComponent<PlotProps, PlotState> {
   public render() {
     const {isPlotListItem, onSort, showBookmarkButton, showSpecifyButton, spec, data} = this.props;
 
+    // by ysyun, unit is px
+    spec.width = 900;
+    if (spec.encoding.column) {
+      spec.width = 400;
+    }
+
     let notesDiv;
     const specKey = JSON.stringify(spec);
     if (this.props.bookmark.dict[specKey]) {

@@ -70,19 +70,19 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
           </div>
           <Tabs className={styles['react-tabs']}>
             <TabList className={styles['tab-list']}>
-              <Tab className={styles.tab}>From Remote URL</Tab>
               <Tab className={styles.tab}>Paste or Upload Dataset</Tab>
+              <Tab className={styles.tab}>From Remote URL</Tab>
               <Tab className={styles.tab}>Change Dataset</Tab>
             </TabList>
 
-            <TabPanel className={styles['tab-panel']}>
-              {this.renderUrlPanel()}
-            </TabPanel>
             <TabPanel className={styles['tab-panel']}>
               <div>
                 {this.renderUploadPanel()}
                 {this.renderPastePanel()}
               </div>
+            </TabPanel>
+            <TabPanel className={styles['tab-panel']}>
+              {this.renderUrlPanel()}
             </TabPanel>
             <TabPanel className={styles['tab-panel']}>
               {this.renderDatasetPanel()}
