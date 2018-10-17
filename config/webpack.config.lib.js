@@ -135,7 +135,10 @@ module.exports = {
   plugins: [
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
-    new webpack.DefinePlugin(env.stringified),
+    // new webpack.DefinePlugin(env.stringified),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
 
     new webpack.optimize.UglifyJsPlugin({
       compress: {

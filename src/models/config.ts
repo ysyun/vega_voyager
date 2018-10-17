@@ -5,6 +5,8 @@ export interface VoyagerConfig {
   hideFooter?: boolean;
   relatedViews?: 'initiallyCollapsed' | 'initiallyShown' | 'disabled';
   wildcards?: 'enabled' | 'disabled';
+  dataTitle?: string;
+  headerTitle?: string;
 };
 
 export const DEFAULT_VOYAGER_CONFIG: VoyagerConfig = {

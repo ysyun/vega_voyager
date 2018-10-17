@@ -17,7 +17,7 @@ export class DataPaneBase extends React.PureComponent<DataPanelProps, {}> {
   public render() {
     const {name} = this.props.data;
     const fieldCount = this.props.data.schema.fieldSchemas.length;
-    const {showDataSourceSelector, wildcards} = this.props.config;
+    const {showDataSourceSelector, wildcards, dataTitle} = this.props.config;
 
     const fields = fieldCount > 0 ? (
       <div styleName="data-pane-section">
@@ -33,12 +33,12 @@ export class DataPaneBase extends React.PureComponent<DataPanelProps, {}> {
     );
     return (
       <div className="pane" styleName="data-pane">
-        <h2 styleName="data-pane-title">Data</h2>
+        <h2 styleName="data-pane-title">{dataTitle}</h2>
         <div>
           <span styleName="current-dataset">
             <i className="fa fa-database"/>
             {' '}
-            {name}
+            {name ? name : 'sync data'}
           </span>
           <span className="right">
             {showDataSourceSelector ? <DataSelector title="Change"/> : null}
