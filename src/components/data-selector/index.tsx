@@ -43,7 +43,8 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
   constructor(props: DataSelectorProps) {
     super(props);
 
-    this.state = {modalIsOpen: false, dataText: '', dataName: 'Step & Point', dataUrl: 'https://gist.githubusercontent.com/ysyun/40a98cae02689ef175556fb7e6273909/raw/97623ec10d4488fa503aad6b296ea56be73cbf90/step_point.json', fileType: undefined };
+    // this.state = {modalIsOpen: false, dataText: '', dataName: 'Step & Point', dataUrl: 'https://gist.githubusercontent.com/ysyun/40a98cae02689ef175556fb7e6273909/raw/97623ec10d4488fa503aad6b296ea56be73cbf90/step_point.json', fileType: undefined };
+    this.state = {modalIsOpen: false, dataText: '', dataName: '', dataUrl: '', fileType: undefined };
 
     this.onDatasetChange = this.onDatasetChange.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -72,7 +73,7 @@ export class DataSelectorBase extends React.PureComponent<DataSelectorProps, Dat
             <TabList className={styles['tab-list']}>
               <Tab className={styles.tab}>Paste or Upload Dataset</Tab>
               <Tab className={styles.tab}>From Remote URL</Tab>
-              <Tab className={styles.tab}>Change Dataset</Tab>
+              <Tab className={styles.tab}>Sample Dataset</Tab>
             </TabList>
 
             <TabPanel className={styles['tab-panel']}>
